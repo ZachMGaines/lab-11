@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 
 export default class Home extends Component {
-  
+
   render() {
     return (
       <div className="Home">
-        <h2>Home Page</h2>
+        <header>
+          <h2>Home Page</h2>
+        </header>
 
-        <Link to='/resources'>See the List</Link>
+        <p>
+          <Link to='/characters'>See the List</Link>
+        </p>
       </div>
     );
   }
