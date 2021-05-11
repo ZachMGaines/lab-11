@@ -9,7 +9,7 @@ export default class CharacterList extends Component {
     return (
       <ul className="CharacterList">
         {characters.map(character => (
-          <CharacterItem key={character.id} character={character} />
+          <CharacterItem key={character.id} characters={character} />
         ))}
       </ul>
 

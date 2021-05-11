@@ -37,7 +37,7 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/character/:id"
+              <Route path="/characters/:id"
                 render={routerProps => (
                   <CharacterDetail {...routerProps} />
                 )}

@@ -4,8 +4,8 @@ import './CharacterItem.css';
 
 export default class CharacterItem extends Component {
   render() {
-    const character = this.props.character;
-
+    const character = this.props.characters;
+    console.log(character);
     return (
       <li>
         <Link to={`/characters/${character.id}`}>
