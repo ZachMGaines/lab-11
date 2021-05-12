@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
 import CharacterList from './CharacterList';
 import { getCharacters } from '../../utils/api.js';
-//import './CharacterPage.css';
+import Loader from '../../common/Loader.js';
+import './CharacterPage.css';
 
 export default class CharactersPage extends Component {
   state = {
-    characters: []
+    characters: [],
+    loading: true
   }
 
   async componentDidMount() {
-    const characters = await getCharacters();
-    if (characters) {
+    try {
+      const characters = await getCharacters();
       this.setState({ characters: characters });
     }
-    else {
-      console.log('No Characters Received! Check network tab');
+    catch (err) {
+      console.log(err.message);
+    }
+    finally {
+      this.setState({ loading: false });
     }
   }
   render() {
-    const { characters } = this.state;
+    const { characters, loading } = this.state;
 
     return (
       <div className="CharactersPage">
+        <Loader loading={loading} />
+
         <h2>List of Characters</h2>
 
         <CharacterList characters={characters} />
