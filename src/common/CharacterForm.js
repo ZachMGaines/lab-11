@@ -6,8 +6,8 @@ export default class CatForm extends Component {
     name: '',
     species: '',
     url: '',
-    introduced: '',
-    isNinja: '',
+    introduced: 1,
+    isNinja: true,
     fightingStyle: ''
   }
 
@@ -20,6 +20,7 @@ export default class CatForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    console.log(this.state);
     this.props.onSubmit(this.state);
   }
 

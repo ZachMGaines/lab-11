@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const URL = 'https://sheltered-beyond-60460.herokuapp.com/api/mortalkombat';
+const URL = '/api/mortalkombat';
 
 export async function getCharacters() {
   const response = await request.get(URL);
@@ -13,7 +13,7 @@ export async function getCharacter(id) {
 }
 
 export async function addCharacter(character) {
-  const response = await (await request.post(URL)).setEncoding(character);
+  const response = await request.post(URL).send(character);
   return response.body;
 }
 

@@ -15,7 +15,8 @@ export default class CharacterAddPage extends Component {
     try {
       this.setState({ loading: true });
       const newCharacter = await addCharacter(characterToAdd);
-      history.pushState(`characters/${newCharacter.id}`);
+      console.log(newCharacter);
+      history.push(`/characters/${newCharacter.id}`);
     }
     catch (err) {
       this.setState({ loading: false });
