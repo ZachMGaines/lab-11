@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './CatForm.css';
+import './CharacterForm.css';
 
 export default class CatForm extends Component {
   state = {

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import CharacterList from './CharacterList';
 import { getCharacters } from '../../utils/api.js';
-import Loader from '../common/Loader.js';
+import Loader from '../../common/Loader.js';
 import './CharacterPage.css';
 
 export default class CharactersPage extends Component {
   state = {
-    characters: []
+    characters: [],
     loading: true
   }
 
@@ -19,7 +19,7 @@ export default class CharactersPage extends Component {
       console.log(err.message);
     }
     finally {
-      this.setState({ loading: false })
+      this.setState({ loading: false });
     }
   }
   render() {

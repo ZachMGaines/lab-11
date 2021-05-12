@@ -11,6 +11,8 @@ import {
   Redirect
 } from 'react-router-dom';
 import './App.css';
+import CharacterAddPage from '../character-add/CharacterAddPage';
+import CharacterEditPage from '../character-edit/CharacterEditPage';
 
 
 class App extends Component {
@@ -37,9 +39,21 @@ class App extends Component {
                 )}
               />
 
+              <Route path="/characters/add" exact={true}
+                render={routerProps => (
+                  <CharacterAddPage {...routerProps} />
+                )}
+              />
+
               <Route path="/characters/:id"
                 render={routerProps => (
                   <CharacterDetail {...routerProps} />
+                )}
+              />
+
+              <Route path="/characters/:id/edit" exact={true}
+                render={routerProps => (
+                  <CharacterEditPage {...routerProps} />
                 )}
               />
 
